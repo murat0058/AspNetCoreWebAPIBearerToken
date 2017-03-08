@@ -1,0 +1,28 @@
+﻿@model AspNetCoreAuthentication.Models.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+}
+<h2></h2>
+
+<div class="row">
+    <form method="post" asp-controller="Login" asp-action="Login" asp-route-returnurl="@Model.ReturnUrl">
+        <div class="form-group">
+            <label asp-for="Username"></label>
+            <input type="email" class="form-control" asp-for="Username" />
+            <span asp-validation-for="Username"></span>
+        </div>
+
+        <div>
+            <label asp-for="Password"></label>
+            <input class="form-control" asp-for="Password" />
+            <span asp-validation-for="Password"></span>
+        </div>
+
+        <div>
+            <label asp-for="RememberMe"></label>
+            <input asp-for="RememberMe" />
+            <span asp-validation-for="RememberMe"></span>
+        </div>
+        <input class="btn btn-success" type="submit" value="Login" />
+    </form>
+</div>
